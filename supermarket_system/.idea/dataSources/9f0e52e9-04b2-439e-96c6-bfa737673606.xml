@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="supermarket_system@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="supermarket_system">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="db_goods"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="test"/>
+    <schema id="8" parent="1" name="tywz_database"/>
+    <table id="9" parent="2" name="attencelnfo"/>
+    <table id="10" parent="2" name="employeeinfo"/>
+    <table id="11" parent="2" name="goodslnfo"/>
+    <table id="12" parent="2" name="goodsoperater"/>
+    <table id="13" parent="2" name="provide"/>
+    <table id="14" parent="2" name="purchase"/>
+    <table id="15" parent="2" name="saledetail"/>
+    <column id="16" parent="9" name="attencelnfono">
+      <Position>1</Position>
+      <DataType>int(5) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="17" parent="9" name="empno">
+      <Position>2</Position>
+      <DataType>int(10)|0</DataType>
+    </column>
+    <column id="18" parent="9" name="onduty">
+      <Position>3</Position>
+      <DataType>int(1)|0</DataType>
+    </column>
+    <column id="19" parent="9" name="ondutydate">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="20" parent="9" name="outduty">
+      <Position>5</Position>
+      <DataType>int(1)|0</DataType>
+    </column>
+    <column id="21" parent="9" name="outdutydate">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="22" parent="9" name="empno">
+      <ColNames>empno</ColNames>
+    </index>
+    <key id="23" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>attencelnfono</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="24" parent="9" name="attencelnfo_ibfk_1">
+      <ColNames>empno</ColNames>
+      <RefSchemaName>supermarket_system</RefSchemaName>
+      <RefTableName>employeeinfo</RefTableName>
+      <RefColNames>empno</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>set-null</OnDelete>
+    </foreign-key>
+    <column id="25" parent="10" name="empno">
+      <Position>1</Position>
+      <DataType>int(5)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="10" name="ename">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="27" parent="10" name="sex">
+      <Position>3</Position>
+      <DataType>varchar(2)|0</DataType>
+    </column>
+    <column id="28" parent="10" name="account">
+      <Position>4</Position>
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <column id="29" parent="10" name="phone">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="30" parent="10" name="password">
+      <Position>6</Position>
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <column id="31" parent="10" name="isAdmin">
+      <Position>7</Position>
+      <DataType>int(1)|0</DataType>
+    </column>
+    <column id="32" parent="10" name="isEnable">
+      <Position>8</Position>
+      <DataType>int(1)|0</DataType>
+    </column>
+    <key id="33" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>empno</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="11" name="goodsscode">
+      <Position>1</Position>
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="11" name="empno">
+      <Position>2</Position>
+      <DataType>int(10)|0</DataType>
+    </column>
+    <column id="36" parent="11" name="goodstyle">
+      <Position>3</Position>
+      <DataType>varchar(6)|0</DataType>
+    </column>
+    <column id="37" parent="11" name="goodsunit">
+      <Position>4</Position>
+      <DataType>varchar(6)|0</DataType>
+    </column>
+    <column id="38" parent="11" name="goodsname">
+      <Position>5</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="39" parent="11" name="goodsalarm">
+      <Position>6</Position>
+      <DataType>int(4)|0</DataType>
+    </column>
+    <column id="40" parent="11" name="goodsprice">
+      <Position>7</Position>
+      <DataType>int(4)|0</DataType>
+    </column>
+    <column id="41" parent="11" name="goodstock">
+      <Position>8</Position>
+      <DataType>int(4)|0</DataType>
+    </column>
+    <index id="42" parent="11" name="empno">
+      <ColNames>empno</ColNames>
+    </index>
+    <key id="43" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>goodsscode</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="44" parent="11" name="empno">
+      <ColNames>empno</ColNames>
+      <RefSchemaName>supermarket_system</RefSchemaName>
+      <RefTableName>employeeinfo</RefTableName>
+      <RefColNames>empno</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>set-null</OnDelete>
+    </foreign-key>
+    <column id="45" parent="12" name="goodsoperaterid">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="46" parent="12" name="empno">
+      <Position>2</Position>
+      <DataType>int(10)|0</DataType>
+    </column>
+    <column id="47" parent="12" name="goodscode">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="48" parent="12" name="goodsname">
+      <Position>4</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="49" parent="12" name="onsaledate">
+      <Position>5</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="50" parent="12" name="onsaleprice">
+      <Position>6</Position>
+      <DataType>int(6)|0</DataType>
+    </column>
+    <column id="51" parent="12" name="state">
+      <Position>7</Position>
+      <DataType>int(1)|0</DataType>
+    </column>
+    <index id="52" parent="12" name="empno">
+      <ColNames>empno</ColNames>
+    </index>
+    <key id="53" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>goodsoperaterid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="54" parent="12" name="goodsoperater_ibfk_1">
+      <ColNames>empno</ColNames>
+      <RefSchemaName>supermarket_system</RefSchemaName>
+      <RefTableName>employeeinfo</RefTableName>
+      <RefColNames>empno</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>set-null</OnDelete>
+    </foreign-key>
+    <column id="55" parent="13" name="provideid">
+      <Position>1</Position>
+      <DataType>int(4) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="56" parent="13" name="providename">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="57" parent="13" name="providemanager">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="58" parent="13" name="providecontact">
+      <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="59" parent="13" name="provideaddress">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="60" parent="13" name="providephone">
+      <Position>6</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <key id="61" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>provideid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="62" parent="14" name="purchaseid">
+      <Position>1</Position>
+      <DataType>int(10) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="63" parent="14" name="goodscode">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="64" parent="14" name="goodsname">
+      <Position>3</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="65" parent="14" name="pruchasetime">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="66" parent="14" name="purchasecount">
+      <Position>5</Position>
+      <DataType>int(8)|0</DataType>
+    </column>
+    <column id="67" parent="14" name="purchaseprice">
+      <Position>6</Position>
+      <DataType>int(4)|0</DataType>
+    </column>
+    <column id="68" parent="14" name="provideid">
+      <Position>7</Position>
+      <DataType>int(4) unsigned|0</DataType>
+    </column>
+    <index id="69" parent="14" name="goodscode">
+      <ColNames>goodscode</ColNames>
+    </index>
+    <index id="70" parent="14" name="provideid">
+      <ColNames>provideid</ColNames>
+    </index>
+    <key id="71" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>purchaseid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="72" parent="14" name="purchase_ibfk_1">
+      <ColNames>goodscode</ColNames>
+      <RefSchemaName>supermarket_system</RefSchemaName>
+      <RefTableName>goodslnfo</RefTableName>
+      <RefColNames>goodsscode</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>set-null</OnDelete>
+    </foreign-key>
+    <foreign-key id="73" parent="14" name="purchase_ibfk_2">
+      <ColNames>provideid</ColNames>
+      <RefSchemaName>supermarket_system</RefSchemaName>
+      <RefTableName>provide</RefTableName>
+      <RefColNames>provideid</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>set-null</OnDelete>
+    </foreign-key>
+    <column id="74" parent="15" name="detailid">
+      <Position>1</Position>
+      <DataType>int(8) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="75" parent="15" name="empno">
+      <Position>2</Position>
+      <DataType>int(10)|0</DataType>
+    </column>
+    <column id="76" parent="15" name="goodscode">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="77" parent="15" name="goodsname">
+      <Position>4</Position>
+      <DataType>varchar(30)|0</DataType>
+    </column>
+    <column id="78" parent="15" name="count">
+      <Position>5</Position>
+      <DataType>int(5)|0</DataType>
+    </column>
+    <column id="79" parent="15" name="unitprice">
+      <Position>6</Position>
+      <DataType>decimal(5)|0</DataType>
+    </column>
+    <column id="80" parent="15" name="sumprice">
+      <Position>7</Position>
+      <DataType>decimal(8)|0</DataType>
+    </column>
+    <column id="81" parent="15" name="saledate">
+      <Position>8</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <index id="82" parent="15" name="empno">
+      <ColNames>empno</ColNames>
+    </index>
+    <index id="83" parent="15" name="goodscode">
+      <ColNames>goodscode</ColNames>
+    </index>
+    <key id="84" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>detailid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="85" parent="15" name="saledetail_ibfk_1">
+      <ColNames>empno</ColNames>
+      <RefSchemaName>supermarket_system</RefSchemaName>
+      <RefTableName>employeeinfo</RefTableName>
+      <RefColNames>empno</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>set-null</OnDelete>
+    </foreign-key>
+    <foreign-key id="86" parent="15" name="saledetail_ibfk_2">
+      <ColNames>goodscode</ColNames>
+      <RefSchemaName>supermarket_system</RefSchemaName>
+      <RefTableName>goodslnfo</RefTableName>
+      <RefColNames>goodsscode</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>set-null</OnDelete>
+    </foreign-key>
+  </database-model>
+</dataSource>
